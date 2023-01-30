@@ -11,7 +11,7 @@ sed -i "s#VMESS_WSPATH#${VMESS_WSPATH}#g;s#VLESS_WSPATH#${VLESS_WSPATH}#g;s#TROJ
 sed -i "s#RELEASE_RANDOMNESS#${RELEASE_RANDOMNESS}#g" /etc/supervisor/conf.d/supervisord.conf
 
 # 设置 nginx 伪装站
-rm -rf /usr/share/nginx/* && wget -c -P /usr/share/nginx "https://github.com/wwrrtt/docker/raw/main/mikutap.zip" && unzip -o "/usr/share/nginx/mikutap.zip" -d /usr/share/nginx/html && rm -f /usr/share/nginx/mikutap.zip
+rm -rf /usr/share/nginx/* && wget -c -P /usr/share/nginx "https://github.com/wwrrtt/docker/raw/main/mikutap.zip" && unzip -o "/usr/share/nginx/mikutap.zip" -d /usr/share/nginx/html
 
 # 伪装 xray 执行文件
 RELEASE_RANDOMNESS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
