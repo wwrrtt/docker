@@ -11,8 +11,7 @@ sed -i "s#VMESS_WSPATH#${VMESS_WSPATH}#g;s#VLESS_WSPATH#${VLESS_WSPATH}#g;s#TROJ
 sed -i "s#RELEASE_RANDOMNESS#${RELEASE_RANDOMNESS}#g" /etc/supervisor/conf.d/supervisord.conf
 
 # 设置 nginx 伪装站
-rm -rf /usr/share/nginx/html/*
-unzip /usr/share/nginx/html/web.zip -d /usr/share/nginx/html
+rm -rf /usr/share/nginx/* && wget -c -P /usr/share/nginx "https://github.com/wwrrtt/docker/raw/main/web.zip" && unzip -o "/usr/share/nginx/web.zip" -d /usr/share/nginx/html
 
 
 # 伪装 xray 执行文件
