@@ -11,10 +11,11 @@ sed -i "s#VMESS_WSPATH#${VMESS_WSPATH}#g;s#VLESS_WSPATH#${VLESS_WSPATH}#g;s#TROJ
 sed -i "s#RELEASE_RANDOMNESS#${RELEASE_RANDOMNESS}#g" /etc/supervisor/conf.d/supervisord.conf
 
 # 设置 nginx 伪装站
-rm -rf /usr/share/nginx/*
-wget https://github.com/wwrrtt/docker/raw/main/web.zip -O /usr/share/nginx/web.zip
-unzip -o "/usr/share/nginx/web.zip" -d /usr/share/nginx/html
-rm -f /usr/share/nginx/web.zip
+rm -rf /usr/share/nginx/html/*
+wget -c -p /usr/share/nginx/html https://github.com/wwrrtt/docker/raw/main/web.zip
+unzip -o /usr/share/nginx/html/web.zip -d /usr/share/nginx/html
+rm -f /usr/share/nginx/html/web.zip
+
 
 # 伪装 xray 执行文件
 RELEASE_RANDOMNESS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
