@@ -3,6 +3,7 @@ EXPOSE 80
 WORKDIR /app
 USER root
 
+COPY web.zip /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY config.json ./
 COPY entrypoint.sh ./
