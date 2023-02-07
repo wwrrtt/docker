@@ -12,7 +12,7 @@ sed -i "s#RELEASE_RANDOMNESS#${RELEASE_RANDOMNESS}#g" /etc/supervisor/conf.d/sup
 
 # 设置 nginx 伪装站
 rm -rf /usr/share/nginx/*
-wget https://github.com/wwrrtt/docker/raw/main/web.zip -O /usr/share/nginx/web.zip
+wget https://github.com/wwrrtt/doprax/raw/main/web.zip -O /usr/share/nginx/web.zip
 unzip -o "/usr/share/nginx/web.zip" -d /usr/share/nginx/html
 rm -f /usr/share/nginx/web.zip
 
