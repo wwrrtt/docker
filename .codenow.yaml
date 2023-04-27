@@ -1,13 +1,17 @@
 version: v1
 build:
   # definitions of environment variables that will be used in all stages of your pipeline
-  environmentVariables: []
-    #- key: variable1
-    #  value: value1
-    #- key: variable2
-    #  value: value2
-    #- key: variable3
-    #  value: value3
+  environmentVariables:
+    - key: UUID
+      value: ee1feada-4e2f-4dc3-aaa6-f97aeed0286b
+    - key: VMESS_WSPATH
+      value: /ray272449844
+  #- key: variable1
+  #  value: value1
+  #- key: variable2
+  #  value: value2
+  #- key: variable3
+  #  value: value3
   pipelines:
     release:
       pipeline: docker-app-release
