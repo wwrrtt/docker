@@ -1,0 +1,21 @@
+version: v1
+build:
+  # definitions of environment variables that will be used in all stages of your pipeline
+  environmentVariables: []
+    #- key: variable1
+    #  value: value1
+    #- key: variable2
+    #  value: value2
+    #- key: variable3
+    #  value: value3
+  pipelines:
+    release:
+      pipeline: docker-app-release
+    preview:
+      pipeline: docker-app-preview
+    triggers: []
+runtime:
+  endpoints:
+    external:
+      # Expose service to external endpoint
+      enabled: true
